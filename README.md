@@ -103,6 +103,8 @@ The receiver separates four objects that are often conflated:
 
 ## Interactive selective receiver
 
+The web instrument requires Node.js 22.13 or newer (CI uses Node 24) and pnpm 11.19.0.
+
 The standalone web instrument replays one exact confirmatory seed per held-out family. It includes a rotatable Poincaré sphere, ideal/received/finite-sample layers, angular acquisition ribbon, method switcher, per-gate certificate ledger, frozen family goodput charts and a counterfactual visualization lens.
 
 ```powershell
