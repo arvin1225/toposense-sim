@@ -1,0 +1,28 @@
+{
+  "study": "H2 / VALUE-OF-INFORMATION ACQUISITION",
+  "status": "NOT CONFIRMED",
+  "statusTone": "negative",
+  "rows": "3,000",
+  "tests": "18 / 18",
+  "integrity": "18 / 18",
+  "metrics": [
+    {"label": "CORRECT RELEASES", "value": "81 vs 75", "note": "VOI vs H1 adaptive", "tone": "pass"},
+    {"label": "GOODPUT", "value": "+8.0%", "note": "paired CI touches zero", "tone": "warn"},
+    {"label": "WRONG RELEASES", "value": "1 / 500", "note": "zero-error contract failed", "tone": "fail"},
+    {"label": "PROPAGATION AUDIT", "value": "2.0e-15", "note": "max direct-vs-FFT error", "tone": "pass"}
+  ],
+  "hypotheses": [
+    {"id": "T5", "label": "Zero-error selective safety", "status": "FAIL"},
+    {"id": "T6", "label": "Paired goodput evidence", "status": "FAIL"},
+    {"id": "T7", "label": "Practical utility effect", "status": "FAIL"},
+    {"id": "T8", "label": "32-attempt budget", "status": "PASS"},
+    {"id": "T9", "label": "Independent propagation", "status": "PASS"}
+  ],
+  "finding": "Certificate-directed sensing needs observability preservation. Interleaved VOI added six correct releases, but one high-mode/NA false release and an interval touching zero prevented a new safety claim.",
+  "artifact": "f32fa368a5942613",
+  "links": [
+    {"label": "ANALYSIS", "href": "https://github.com/arvin1225/toposense-sim/blob/main/experiments/H2-value-of-information/analysis.md"},
+    {"label": "SUMMARY JSON", "href": "https://github.com/arvin1225/toposense-sim/blob/main/artifacts/confirmatory-h2/summary_h2.json"},
+    {"label": "VALIDATION", "href": "https://github.com/arvin1225/toposense-sim/blob/main/artifacts/confirmatory-h2/validation-report-h2.json"}
+  ]
+}

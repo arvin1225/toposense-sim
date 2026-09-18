@@ -1,0 +1,33 @@
+{
+  "acquisition_schedule": "alternating support-recovery and VOI; support-recovery first",
+  "artifact": "TopoSense-Sim H2 confirmatory benchmark",
+  "benchmark_sha256": "f32fa368a594261349807e06219c81b173b01aa05da3d7e99ec22c693e272c94",
+  "bootstrap_resamples": 5000,
+  "code_sha256": "a005e66d5dd1f84b871af282a5ca6e3837c20f1729c043cd557bc88dc5c35f07",
+  "families": [
+    "blur_crosstalk",
+    "low_photon_bias",
+    "high_mode_na",
+    "sector_dropout",
+    "compound_shift"
+  ],
+  "maximum_sample_budget": 32,
+  "methods": [
+    "uniform_support_certificate",
+    "adaptive_support_certificate",
+    "voi_support_certificate",
+    "voi_no_support",
+    "voi_global_support",
+    "oracle_dense"
+  ],
+  "protocol": "experiments/H2-value-of-information/protocol.md",
+  "row_count": 3000,
+  "seed_start": 2000,
+  "seeds_per_family": 100,
+  "summary_sha256": "6d45b36dcf7a2b8eaf47894dd16eb3babe36be90ff294a03ca7659721ef02c81",
+  "voi_weights": {
+    "gap_exploration": 0.018,
+    "global_gain": 1.0,
+    "local_gain": 0.22
+  }
+}

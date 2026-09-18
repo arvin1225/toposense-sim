@@ -1,0 +1,41 @@
+project: TopoSense-Sim
+status: h2_confirmatory_complete
+question: >-
+  Can a finite photon-budget Stokes receiver use adaptive angular sampling and
+  support-aware certificates to increase certified goodput under held-out
+  optical/sensor composition shift without false topological releases?
+claim_boundary: synthetic projected boundary winding; no full 2D degree or laboratory receiver claim
+current_loop: h2_reporting
+hypotheses:
+  T1:
+    status: passed_confirmatory
+    prediction: unconditional polygon decoding has at least 5 percent pooled false-release probability
+  T2:
+    status: passed_confirmatory
+    prediction: adaptive support-aware certificate has one-sided 95 percent false-release upper bound at most 1 percent
+  T3:
+    status: passed_confirmatory
+    prediction: adaptive support-aware certificate improves certified goodput at least 20 percent over the global certificate at the same maximum sample budget
+  T4:
+    status: failed_confirmatory_secondary
+    prediction: support gate halves false release on high-mode-NA and sector-dropout families without more than 15 percentage-point coverage loss
+  T5:
+    status: failed_confirmatory
+    prediction: VOI support certificate has zero wrong releases and one-sided 95 percent false-release upper bound at most 1 percent
+  T6:
+    status: failed_confirmatory
+    prediction: VOI has positive paired certified-goodput improvement over the frozen H1 adaptive policy with bootstrap lower endpoint above zero
+  T7:
+    status: failed_confirmatory
+    prediction: VOI improves coverage at least 3 percentage points or certified goodput at least 10 percent while retaining T5 safety
+  T8:
+    status: passed_confirmatory
+    prediction: every operational method remains within 32 attempted analyzer locations
+  T9:
+    status: passed_confirmatory
+    prediction: direct Fourier-sum propagation agrees with FFT propagation below 1e-10 and preserves dense winding
+primary_metrics: [false_release_probability, certified_goodput_bits_per_acquisition]
+secondary_metrics: [coverage, conditional_error, erasure_rate, samples_used, support_violation_rate]
+exploratory_seed_range: [0, 499]
+confirmatory_seed_range_h2: [2000, 2099]
+next_action: publish H2 failure analysis and bind the evidence interface to the validated confirmatory artifact

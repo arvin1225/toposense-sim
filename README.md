@@ -155,6 +155,8 @@ Do not overwrite the committed artifact when posing a new hypothesis; create a n
 
 ## Integrity design
 
+Original local protocol and result commits are preserved in the [development history archive](docs/HISTORY.md); the first public branch is a source snapshot.
+
 - exploratory seeds: `0–499`; confirmation: `1000–1099` per family;
 - protocol commit `8d8a61d` precedes implementation commit `61670d8`, which precedes result commit `8eb7647`;
 - every method has the same maximum 32-location acquisition budget;

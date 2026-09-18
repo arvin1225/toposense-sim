@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07121c" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2307121c'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='44' fill='%2378d8ff'%3ETS%3C/text%3E%3C/svg%3E" />
+    <meta name="description" content="Interactive finite-noise Stokes receiver and topology certificate audit." />
+    <title>TopoSense-Sim — Selective Receiver</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand"><div class="brand-orbit"><i></i><span>TS</span></div><div><strong>TOPOSENSE–SIM</strong><small>FINITE-NOISE SELECTIVE RECEIVER</small></div></div>
+        <div class="system-strip"><span class="pulse"></span><b>CONFIRMATORY REPLAY</b><span>5 MODE FAMILIES</span><span>32-SAMPLE MAX BUDGET</span><span>5,000 AUDIT ROWS</span></div>
+        <a class="artifact-state" href="study.html"><span>RECEIVED-LOOP BOUNDS</span><b>Open numerical study ↗</b></a>
+      </header>
+
+      <aside class="left-rail">
+        <section>
+          <div class="kicker">HELD-OUT COMPOSITION</div>
+          <div id="scenario-list" class="scenario-list"></div>
+        </section>
+        <section>
+          <div class="kicker">DECISION POLICY</div>
+          <div id="method-list" class="method-list"></div>
+        </section>
+        <section>
+          <div class="kicker split"><span>DISPLAY SETTINGS</span><button id="reset-lens">RESET</button></div>
+          <label class="control"><span>NA headroom <output id="na-out">1.00×</output></span><input id="na-control" type="range" min="0.35" max="1.15" value="1" step="0.01" /></label>
+          <label class="control"><span>Residual carrier <output id="bias-out">0.00</output></span><input id="bias-control" type="range" min="-0.35" max="0.35" value="0" step="0.01" /></label>
+          <label class="control"><span>Visible samples <output id="budget-out">32</output></span><input id="budget-control" type="range" min="8" max="32" value="32" step="1" /></label>
+          <p class="lens-note">Visual counterfactual only. Frozen CSV metrics and decisions never change.</p>
+        </section>
+        <div class="boundary-card"><b>MEASURED OBJECT</b><p>Projected boundary winding of S1 + iS2. H1/H2 use empirical receiver gates.</p></div>
+      </aside>
+
+      <main class="workspace">
+        <section class="mission-header">
+          <div><span class="eyebrow">POINCARÉ / SELECTIVE ACQUISITION / SEED <b id="seed-label">1004</b></span><h1>Polarization measurements<br /><em>and the winding they support.</em></h1></div>
+          <div class="symbol-contract"><span>TRUE SYMBOL</span><strong id="true-winding">+2</strong><i>→</i><span>OBSERVED</span><strong id="observed-winding">+1</strong></div>
+        </section>
+
+        <section class="sphere-panel">
+          <div class="panel-toolbar">
+            <div><span class="live"></span> NORMALIZED STOKES MANIFOLD</div>
+            <div class="layer-switches"><label><input id="show-ideal" type="checkbox" checked /><i class="ideal"></i>IDEAL</label><label><input id="show-received" type="checkbox" checked /><i class="received"></i>RECEIVED</label><label><input id="show-samples" type="checkbox" checked /><i class="samples"></i>SAMPLES</label></div>
+            <div>DRAG TO ROTATE · WHEEL TO ZOOM</div>
+          </div>
+          <div class="sphere-stage">
+            <canvas id="sphere-canvas" width="1000" height="720"></canvas>
+            <div class="axis-label north">+S3</div><div class="axis-label east">+S1</div><div class="axis-label west">−S1</div>
+            <div class="float-card field-card"><span>FIELD TRANSFER</span><div><b>NA CUTOFF</b><strong id="na-value">3.10</strong></div><div><b>CROSSTALK</b><strong id="cross-value">0.12</strong></div><div><b>PROJECTED BIAS</b><strong id="bias-value">0.44</strong></div></div>
+            <div class="float-card sample-card"><span>ACQUISITION</span><div><b>INITIAL</b><strong>12</strong></div><div><b>ADDED</b><strong id="added-value">20</strong></div><div><b>DROPPED</b><strong id="dropped-value">0</strong></div></div>
+            <div id="sphere-hint" class="sphere-hint">exact dense field + finite observations</div>
+          </div>
+          <div class="angular-ribbon"><span>0°</span><div id="angle-track" class="angle-track"></div><span>360°</span></div>
+        </section>
+
+        <section class="analysis-grid">
+          <article class="glass-panel method-chart-panel"><header><div><span class="kicker">CONFIRMATORY UTILITY</span><h2>Correct released bits per acquisition</h2></div><b>T3 +200%</b></header><div id="goodput-chart" class="goodput-chart"></div></article>
+          <article class="glass-panel family-chart-panel"><header><div><span class="kicker">FAMILY RESOLUTION</span><h2>Adaptive / global goodput</h2></div><span>SEEDS 1000–1099</span></header><div id="family-chart" class="family-chart"></div></article>
+        </section>
+      </main>
+
+      <aside class="right-rail">
+        <section class="decision-card">
+          <div class="kicker">RECEIVER OUTPUT</div>
+          <div id="decision-badge" class="decision-badge erasure"><span>DECISION</span><strong>ERASURE</strong></div>
+          <div class="decision-symbol"><span>RELEASED WINDING</span><b id="released-symbol">—</b></div>
+          <p id="decision-explanation">The integer-looking polygon is not released because one or more registered evidence gates fail.</p>
+        </section>
+        <section class="gate-section"><div class="kicker">EMPIRICAL RELEASE GATES</div><div id="gate-list" class="gate-list"></div></section>
+        <section class="evidence-metrics">
+          <div><span>CERT. MARGIN</span><strong id="margin-metric">−1.032</strong></div>
+          <div><span>MIN |S1+iS2|</span><strong id="radius-metric">0.214</strong></div>
+          <div><span>MAX GAP</span><strong id="gap-metric">0.26</strong><small>rad</small></div>
+          <div><span>TRANSFER</span><strong id="transfer-metric">0.74</strong></div>
+        </section>
+        <section class="registered-result">
+          <div class="kicker">FROZEN STUDY</div>
+          <div class="result-row"><span>T1</span><p><b>37.2% wrong release</b><small>unconditional polygon</small></p><i class="pass">PASS</i></div>
+          <div class="result-row"><span>T2</span><p><b>0 / 500</b><small>upper bound 0.538%</small></p><i class="pass">PASS</i></div>
+          <div class="result-row"><span>T3</span><p><b>+200% goodput</b><small>paired CI above zero</small></p><i class="pass">PASS</i></div>
+          <div class="result-row"><span>T4</span><p><b>32 pp cost</b><small>coverage constraint</small></p><i class="fail">FAIL</i></div>
+        </section>
+        <div class="integrity-seal"><div>✓</div><p><b>EXACT REPLAY VERIFIED</b><span>hash · seed range · budget · balance · row replay</span></p></div>
+      </aside>
+    </div>
+    <button id="v2-evidence-trigger" class="v2-evidence-trigger" type="button"><i></i><span>ACQUISITION STUDY</span></button>
+    <aside id="v2-evidence-drawer" class="v2-evidence-drawer" aria-label="V2 confirmatory evidence">
+      <header><div><span>ADAPTIVE MEASUREMENT / H2</span><strong data-v2-study>LOADING EVIDENCE</strong></div><button id="v2-evidence-close" type="button" aria-label="Close evidence">CLOSE</button></header>
+      <div class="v2-verdict"><span>PAIRED STUDY RESULT</span><strong data-v2-status>--</strong></div>
+      <div class="v2-meta" data-v2-meta></div><div class="v2-metrics" data-v2-metrics></div>
+      <section class="v2-ledger"><span>ACQUISITION CHECKS</span><div data-v2-hypotheses></div></section>
+      <section class="v2-finding"><span>OBSERVED BEHAVIOR</span><p data-v2-finding>Loading recorded acquisition results.</p></section>
+      <footer><div><span>ARTIFACT SHA256</span><code data-v2-hash>--</code></div><nav data-v2-links></nav></footer>
+    </aside>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/evidence.js"></script>
+  </body>
+</html>

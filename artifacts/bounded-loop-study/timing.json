@@ -1,0 +1,6 @@
+{
+  "evaluations": 600,
+  "median_ms": 0.09495,
+  "p95_ms": 0.18212499999999987,
+  "note": "Local wall-clock measurements; hardware dependent."
+}

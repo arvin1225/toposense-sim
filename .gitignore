@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+web/node_modules/
+web/dist/
+artifacts/pilot*/
+artifacts/exploratory*/
+artifacts/test*/

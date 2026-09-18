@@ -1,0 +1,31 @@
+{
+  "artifact": "TopoSense-Sim confirmatory benchmark",
+  "benchmark_sha256": "9458dc97489dcfec5e3d68db8d97074631e8375b10ddd3394b85fd0432824508",
+  "bootstrap_resamples": 5000,
+  "code_sha256": "8923581399d159af17d7d5e873ee47ad1c9c55b3d8f3ba2a9ca61cff1712f725",
+  "families": [
+    "blur_crosstalk",
+    "low_photon_bias",
+    "high_mode_na",
+    "sector_dropout",
+    "compound_shift"
+  ],
+  "maximum_sample_budget": 32,
+  "methods": [
+    "polygon_unconditional",
+    "margin_only",
+    "global_certificate",
+    "local_certificate",
+    "uniform_support_certificate",
+    "adaptive_support_certificate",
+    "adaptive_no_support",
+    "adaptive_no_calibration",
+    "adaptive_global_support",
+    "oracle_dense"
+  ],
+  "protocol": "experiments/H1-certified-goodput/protocol.md",
+  "row_count": 5000,
+  "seed_start": 1000,
+  "seeds_per_family": 100,
+  "summary_sha256": "96c204e070cd1bafe8061befe209182359e1141b4e0c6542f1f0122ae7b6a224"
+}

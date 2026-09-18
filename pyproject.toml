@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toposense-sim"
+version = "0.2.0"
+description = "Finite-noise Stokes receiver simulator with adaptive selective topology certification"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Yongkang Shi"}]
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8"]
+dev = ["pytest>=8", "build>=1.2"]
+
+[project.scripts]
+toposense = "toposense_sim.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/arvin1225/toposense-sim"
+Repository = "https://github.com/arvin1225/toposense-sim"
+Issues = "https://github.com/arvin1225/toposense-sim/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

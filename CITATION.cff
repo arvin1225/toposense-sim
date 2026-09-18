@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this simulation artifact, cite it using the metadata below."
+title: "TopoSense-Sim: Selective certification under finite noisy Stokes acquisition"
+type: software
+authors:
+  - family-names: Shi
+    given-names: Yongkang
+repository-code: "https://github.com/arvin1225/toposense-sim"
+url: "https://github.com/arvin1225/toposense-sim"
+version: 0.2.0
+date-released: 2026-08-13
+license: MIT

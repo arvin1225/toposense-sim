@@ -1,0 +1,94 @@
+{
+  "study": "bounded received-loop winding",
+  "status": "exploratory analytic-model stress test",
+  "scenes": 600,
+  "rows": 1200,
+  "methods": {
+    "polygon": {
+      "trials": 600,
+      "releases": 600,
+      "wrong_releases": 173,
+      "coverage": 1.0
+    },
+    "bounded_tube": {
+      "trials": 600,
+      "releases": 240,
+      "wrong_releases": 0,
+      "coverage": 0.4
+    }
+  },
+  "by_family": {
+    "clear_loop": {
+      "polygon": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 0,
+        "coverage": 1.0
+      },
+      "bounded_tube": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 0,
+        "coverage": 1.0
+      }
+    },
+    "near_origin": {
+      "polygon": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 32,
+        "coverage": 1.0
+      },
+      "bounded_tube": {
+        "trials": 120,
+        "releases": 0,
+        "wrong_releases": 0,
+        "coverage": 0.0
+      }
+    },
+    "high_frequency": {
+      "polygon": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 120,
+        "coverage": 1.0
+      },
+      "bounded_tube": {
+        "trials": 120,
+        "releases": 0,
+        "wrong_releases": 0,
+        "coverage": 0.0
+      }
+    },
+    "missing_sector": {
+      "polygon": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 21,
+        "coverage": 1.0
+      },
+      "bounded_tube": {
+        "trials": 120,
+        "releases": 0,
+        "wrong_releases": 0,
+        "coverage": 0.0
+      }
+    },
+    "multimode": {
+      "polygon": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 0,
+        "coverage": 1.0
+      },
+      "bounded_tube": {
+        "trials": 120,
+        "releases": 120,
+        "wrong_releases": 0,
+        "coverage": 1.0
+      }
+    }
+  },
+  "csv_sha256": "631e811c1dd96d0319b227162471de4c839b35359a82c792e0ef557813f86319",
+  "source_sha256": "daacaeaa2b95ec2f7faffc5cf2f8824ddac45a3ba02694088642aadf020cb0eb"
+}
